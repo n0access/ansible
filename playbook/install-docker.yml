@@ -1,7 +1,6 @@
 - hosts:
-  - srv-prod-1.home.clcreative.de
-  - srv-prod-2.home.clcreative.de
-
+  - m1.ubuntu.intra
+ 
   become: yes
   tasks:
 
