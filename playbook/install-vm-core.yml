@@ -1,4 +1,4 @@
-- hosts: "{{ hosts }}"
+- hosts: "*"
 
   become: yes
   tasks:
@@ -6,7 +6,7 @@
   - name: install core packages
     apt:
       name:
-        - prometheus-node-exporter
+        - net-tools
         - nfs-common
         - qemu-guest-agent
         - unzip
