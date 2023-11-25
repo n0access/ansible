@@ -1,3 +1,4 @@
+---
 - name: Execute Bash script from GitHub on remote machine
   hosts: m2
   become: true
