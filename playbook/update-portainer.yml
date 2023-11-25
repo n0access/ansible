@@ -1,0 +1,15 @@
+---
+- name: Execute Bash script from GitHub on remote machine
+  hosts: m2
+  become: true
+
+  tasks:
+    - name: Download the Bash script from GitHub
+      get_url:
+        url: "https://raw.githubusercontent.com/n0access/ansible/main/update-portainer.sh"
+        dest: /home/update-portainer.sh
+        mode: 0755  # Make the script executable
+        force: yes
+
+    - name: Execute the script
+      command: "/home/update-portainer.sh"
