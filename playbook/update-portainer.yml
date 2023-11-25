@@ -7,9 +7,9 @@
     - name: Download the Bash script from GitHub
       get_url:
         url: "https://raw.githubusercontent.com/n0access/ansible/main/update-portainer.sh"
-        dest: /tmp/update-portainer.sh
+        dest: /opt/update-portainer.sh
         mode: 0755  # Make the script executable
         force: yes
 
     - name: Execute the script
-      command: "/tmp/update-portainer.sh"
+      command: "/opt/update-portainer.sh"
