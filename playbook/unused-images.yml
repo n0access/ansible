@@ -1,0 +1,9 @@
+---
+- name: List unused Docker image names
+  hosts: m2
+  tasks:
+    - name: Get list of unused Docker images
+      command: docker image prune -af --filter "until=24h" 
+     
+
+   
