@@ -15,7 +15,7 @@
 
     
     - name: Deploy Jellyfin Docker container
-      docker_compose:
+      community.general.docker_compose:
         project_src: /home/ken/project/deploy/
         state: present
         env_file: /home/ken/project/deploy/m2.env
