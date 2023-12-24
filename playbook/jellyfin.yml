@@ -7,5 +7,5 @@
     - name: Clone Jellyfin Docker Compose from GitHub
       git:
         repo: https://github.com/n0access/dockers.git
-        dest: /home/ken/docker/jellyfin-docker
+        dest: /home/ken/docker/
       register: git_clone
