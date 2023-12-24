@@ -6,6 +6,15 @@
   tasks:
     - name: Clone Jellyfin Docker Compose from GitHub
       git:
-        repo: https://github.com/n0access/dockers.git
-        dest: /home/ken/docker/
+	repo: https://github.com/n0access/dockers.git
+        dest: /home/ken/project/
       register: git_clone
+
+    - name: Copy Docker Compose file to deploy directory
+      command: cp /home/ken/project/jellyfin/docker-compose.yml /home/ken/project/deploy/
+
+
+    - name: Deploy Jellyfin Docker container
+      docker_compose:
+        project_src: /home/ken/project/deploy/
+        state: present
