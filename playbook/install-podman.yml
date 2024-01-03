@@ -1,0 +1,10 @@
+---
+- name: Install Podman on Ubuntu
+  hosts: m3
+  become: true  # Run tasks as root
+
+  tasks:
+    - name: Install Podman
+      apt:
+        name: podman
+        state: present
