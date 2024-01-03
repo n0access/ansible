@@ -1,6 +1,6 @@
 ---
 - name: Install Podman on Ubuntu
-  hosts: m3
+  hosts: p2
   become: true  # Run tasks as root
 
   tasks:
