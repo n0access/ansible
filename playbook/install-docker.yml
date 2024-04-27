@@ -1,5 +1,4 @@
-- hosts:
-  - m1.ubuntu.intra
+- hosts: "*"
  
   become: yes
   tasks:
