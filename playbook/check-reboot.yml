@@ -1,0 +1,24 @@
+---
+- name: Check if Ubuntu host needs a reboot
+  hosts: m2
+  become: yes
+  tasks:
+    - name: Check for the presence of /var/run/reboot-required
+      stat:
+        path: /var/run/reboot-required
+      register: reboot_required_file
+
+    - name: Set reboot required fact
+      set_fact:
+        reboot_required: true
+      when: reboot_required_file.stat.exists
+
+    - name: Print message if reboot is required
+      debug:
+        msg: "Reboot is required!"
+      when: reboot_required | default(false)
+
+    - name: Print message if reboot is not required
+      debug:
+        msg: "No reboot is required."
+      when: not reboot_required | default(false)
