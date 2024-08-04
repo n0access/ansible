@@ -18,6 +18,11 @@
         msg: "Reboot is required!"
       when: reboot_required | default(false)
 
+    - name: Reboot the host if required
+      reboot:
+        reboot_timeout: 600
+      when: reboot_required | default(false)
+
     - name: Print message if reboot is not required
       debug:
         msg: "No reboot is required."
