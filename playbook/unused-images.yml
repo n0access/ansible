@@ -4,6 +4,6 @@
   tasks:
     - name: Delete unused Docker images
       command: docker image prune -af --filter "until=24h" 
-     
+      become: yes
 
    
