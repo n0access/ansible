@@ -6,3 +6,7 @@
         update_cache: yes
         upgrade: 'yes'
         autoremove: true
+    - name: Update Flatpak apps
+      command: flatpak update -y
+      register: flatpak_update_result
+      changed_when: "'Installing' in flatpak_update_result.stdout or 'Updating' in flatpak_update_result.stdout"
