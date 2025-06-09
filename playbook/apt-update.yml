@@ -10,7 +10,7 @@
 
 
     - name: Update flatpak if available
-        command: flatpak update -y
-        register: flatpak_result
-        failed_when: false
-        changed_when: "'Nothing to do.' not in flatpak_result.stdout"  
+      command: flatpak update -y
+      register: flatpak_result
+      failed_when: false
+      changed_when: "'Nothing to do.' not in flatpak_result.stdout"  
